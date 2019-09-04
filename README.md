@@ -5,8 +5,8 @@
 1. Recognize vocabulary term: "array of hashes"
 2. Recognize that "arrays of hashes" are contact lists or spreadsheets
 3. Create an `Array` of `Hash`es
-4. Read scalar data from an array of `Hash`es
-5. Modify scalar data in an array of `Hash`es
+4. Read scalar data from an `Array` of `Hash`es
+5. Modify scalar data in an `Array` of `Hash`es
 
 ## Introduction
 
