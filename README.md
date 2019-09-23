@@ -16,8 +16,8 @@ arrays" to "arrays of hashes."
 
 ### Key Image: Contact List or Spreadsheet
 
-To help you when reading the rest of this lesson, keep in mind that an Array of
-Hashes is well expressed by a contact list (or, if you're old enough a
+To help you when reading the rest of this lesson, keep in mind that an `Array` of
+`Hash`es is well expressed by a contact list (or, if you're old enough, a
 Rolodex). Take a card, add some standard fields to it (first name, family name,
 phone number, fax number, email address, etc.) and fill the fields in. Take
 another card and do the same. Take another card and do the same. Those three
@@ -26,18 +26,21 @@ cards could go in an `Array`, an `Array` of `Hash`es.
 If you think about a contact list, it's also easy to export it to a spreadsheet
 like a Google Sheet or an Excel Sheet. You could take the fields on the card
 and make them the columns across the top of the spreadsheet. Then for each
-member of the contact list you could make a new row for them. Thus vertically
-you would create an `Array` of `Hash`es.
+member of the contact list you could make a new row for it.
+
+Oftentimes when a business friend who doesn't know how to code asks for
+programming help, they'll want to give us data out of a spreadsheet. Our first
+move is to turn that spreadsheet into an AoH.
 
 ### From Hash to Array of Hashes
 
-Recall that an`Hash` is like a table, but in code form. It is a way for your
-program to store pieces of data as elements in a collection. We call those
-elements, in a `Hash`, the `Hash`'s _values_. We can point to each _value_ by
-using a unique `String` or `Symbol` "lookup name" called a _key_. Arrays can
-contain any combination of data types -- `Boolean`s, `Integer`s, `Strings`.
+Recall that a `Hash` is like a table, but in code form. It is a way for your
+program to store pairs of data as elements in a collection.
 
-A number of `Hash`es inside of an Array would mean you could find the zeroth,
+We call names in a `Hash` that we use to point to data, _keys_. By providing a
+`Hash` name and a _key_, we can uniquely identify a _value_.
+
+Multiple Hash`es inside of an Array would mean you could find the zeroth,
 first, second, etc. element of that `Array` and get back a little dictionary.
 You could then ask that dictionary for the `:family_name` field's content and
 get back "Smith" or "Huang" or "Dayal."
@@ -58,7 +61,8 @@ programmer, you might see someone use these words.
 Let's make a simple list of our favorite directors
 
 ```ruby
-# Simple 1-D arrays
+# Simple Hashes
+
 director_1 = {
   name: "Ida Lupino",
   favorite_movie: "The Hitch-Hiker"
@@ -74,7 +78,7 @@ director_3 = {
   favorite_movie: "Solaris"
 }
 
-spice_rack = [
+film_fest = [
   director_1,
   director_2,
   director_3,
@@ -82,16 +86,16 @@ spice_rack = [
 ```
 
 If we don't need to use `director_1`, `director_2`, `director_3`, then we don't
-need to assign them before nesting them in `spice_rack`.  We can write a nested
+need to assign them before nesting them in `film_fest`  We can write a nested
 AoH using literal formatting:
 
 ```ruby
 # AoH in one go
-directors = [{:name=>"Ida Lupino", :favorite_movie=>"The Hitch-Hiker"}, {:name=>"Orson Welles", :favorite_movie=>"Citizen Kane"}, {:name=>"Andrej Tarkovsky", :favorite_movie=>"Solaris"}]
+film_fest = [{:name=>"Ida Lupino", :favorite_movie=>"The Hitch-Hiker"}, {:name=>"Orson Welles", :favorite_movie=>"Citizen Kane"}, {:name=>"Andrej Tarkovsky", :favorite_movie=>"Solaris"}]
 
 # Same as above, but using whitespace to make it easier for humans to read
 
-directors = [
+film_fest = [
   {:name=>"Ida Lupino", :favorite_movie=>"The Hitch-Hiker"},
   {:name=>"Orson Welles", :favorite_movie=>"Citizen Kane"},
   {:name=>"Andrej Tarkovsky", :favorite_movie=>"Solaris"}
@@ -99,14 +103,16 @@ directors = [
 
 ```
 
-Since Ruby doesn't care about whitespace, we'd advise you to write an AoH.
+Since Ruby doesn't care about whitespace, we'd advise you to write an AoH like
+the second example.
+
 Take a moment to reflect, can you "see" the spreadsheet there in the Array
 literal? There's more repetition than you'd see in a real spreadsheet, but the
 idea of intersecting coordinates between an order (`0`, `1`, `2`, `3`) and a
 key (`:name` or `:favorite_movie`) should feel a little bit like a spreadsheet.
 
 It's good to keep those coordinates in mind as we start trying to retrieve
-values in the next section!
+values in this next section!
 
 ## Read Scalar Data From a Nested Array
 
