@@ -40,7 +40,7 @@ program to store pairs of data as elements in a collection.
 We call names in a `Hash` that we use to point to data, _keys_. By providing a
 `Hash` name and a _key_, we can uniquely identify a _value_.
 
-Multiple Hash`es inside of an Array would mean you could find the zeroth,
+Multiple `Hash`es inside of an Array would mean you could find the zeroth,
 first, second, etc. element of that `Array` and get back a little dictionary.
 You could then ask that dictionary for the `:family_name` field's content and
 get back "Smith" or "Huang" or "Dayal."
